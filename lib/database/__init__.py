@@ -18,12 +18,12 @@ def new_message(_text:str,_author:int):
 	_mw.close()
 def lookup_user(_id: int):
 	with open("users.json","r") as _users:
-		_u = json.loads(users.read())
+		_u = json.loads(_users.read())
 		try:
-			_res = _u[_id]
+			_res = _u[str(_id)]
 			return _res
 		except:
-			return None
+			return ""
 def new_user(_name:str,_perms:int):
 	_users = open("users.json")
 	_us = json.loads(_users.read())
@@ -39,4 +39,7 @@ def new_user(_name:str,_perms:int):
 	_users.write(json.dumps(_users_loaded))
 	_users.close()
 def get_messages():
-	pass
+	_file = open("messages.json")
+	res = json.loads(_file.read())
+	_file.close()
+	return res

@@ -21,6 +21,14 @@ def send_message(message,author):
 @app.route('/lib/user/create/<string:username>')
 def create_user(username):
 	lib.database.new_user(username,0)
+	return ""
+@app.route('/lib/info/<int:user>')
+def user_info(user):
+	return str(lib.database.lookup_user(user))
+
+@app.route('/lib/messages')
+def get_messages():
+	return str(lib.database.get_messages())
 
 
 
@@ -41,7 +49,18 @@ def create_user(username):
 
 
 
-
+@app.route('/<path:page>')
+def loadHtml(page):
+	try:
+		f = open("lib/gui/"+page+".html")
+		res = f.read()
+		f.close()
+		return res
+	except:
+		f = open("lib/gui/404.html")
+		res = f.read()
+		f.close()
+		return res
 
 
 
