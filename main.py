@@ -18,6 +18,9 @@ app.config.from_object('config')
 def send_message(message,author):
 	lib.database.new_message(message,author)
 	return ""
+@app.route('/lib/user/create/<string:username>')
+def create_user(username):
+	lib.database.new_user(username,0)
 
 
 
