@@ -3,16 +3,18 @@ import json
 import datetime
 messages = []
 def new_message(_text:str,_author:int):
-	with open("messages.json","w") as _m:
-		messages = json.loads(_m.read())
-		_msg = {
-			"time":datetime.datetime.now().time(),
-			"content":_text,
-			"author":_author
-		}
-		messages.append(_msg)
-		_m.write(json.dump(messages))
-		_m.close()
+	_mr = open("messages.json","r")
+	_mw = open("messages.json","a")
+	messages = json.loads(_mr.read())
+	_msg = {
+		"time":str(datetime.datetime.now().time()),
+		"content":_text,
+		"author":_author
+	}
+	messages.append(_msg)
+	_mw.write(json.dumps(messages))
+	_mr.close()
+	_mw.close()
 def lookup_user(_id: int):
 	with open("users.json","r") as _users:
 		_u = json.loads(users.read())
