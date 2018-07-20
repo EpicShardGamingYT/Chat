@@ -1,0 +1,4 @@
+discord.py
+requests
+flask
+requests-oauthlib==0.5.0
