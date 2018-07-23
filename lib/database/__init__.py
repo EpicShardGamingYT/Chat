@@ -2,6 +2,11 @@ import sqlite3
 import json
 import datetime
 import time
+from . import Security as security
+import string
+import random
+import json
+tokenLen = 30
 messages = []
 def new_message(_text:str,_author:int):
 	_mr = open("messages.json","r")
@@ -24,7 +29,7 @@ def lookup_user(_id: int):
 			return _res
 		except:
 			return ""
-def new_user(_name:str,_perms:int):
+def new_user(_name:str,_pwd:str,_perms:int):
 	_users = open("users.json")
 	_us = json.loads(_users.read())
 	_user_count = len(_us.keys())
@@ -38,6 +43,10 @@ def new_user(_name:str,_perms:int):
 	_users = open("users.json","w")
 	_users.write(json.dumps(_users_loaded))
 	_users.close()
+	_token = []
+	for i in range(tokenLen+1):
+		_token.append(random.choice(string.printable))
+	security.setup_user(_name,_pwd,"".join(_token))
 def get_messages():
 	_file = open("messages.json")
 	res = json.loads(_file.read())
