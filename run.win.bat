@@ -1,3 +1,5 @@
+@echo off
+setup.py
 start main.py
 :top
 ping google.com
