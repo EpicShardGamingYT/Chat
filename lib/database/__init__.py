@@ -46,6 +46,7 @@ def new_user(_name:str,_pwd:str,_perms:int):
 	_token = []
 	for i in range(tokenLen+1):
 		_token.append(random.choice(string.printable))
+	_token.remove(" ")
 	security.setup_user(_name,_pwd,"".join(_token))
 def get_messages():
 	_file = open("messages.json")
