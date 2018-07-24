@@ -34,12 +34,9 @@ def user_info(user):
 @app.route('/lib/messages')
 def get_messages():
 	return str(lib.database.get_messages())
-@app.route("/lib/tests/lib/<string:uname>")
-def test_userInfo(uname):
-	pass
 
 @app.route('/')
-def index()
+def index():
 	f = open("lib/gui/index.html")
 	res = f.read()
 	f.close()
