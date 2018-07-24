@@ -11,6 +11,6 @@ if c == "y":
 	exec(mass=["mkdir Keys","GenKey.py"])
 c = input("Do you have git? (n/y)")
 if c == "n":
-	exec("start https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-64-bit.exe")
+	exec(one="start https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-64-bit.exe")
 print("Done!")
 input("Press enter to exit...")
