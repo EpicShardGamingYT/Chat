@@ -14,5 +14,16 @@ def setup_user(_uname,_pwd,_token):
 	uob.append(user)
 	fileW = open("security.json","w")
 	fileW.write(json.dumps(uob))
+def getID(_token):
+	uob = json.loads(sec)
+	for i in uob:
+		if i.token == _token:
+			with open("users.json") as f:
+				l = json.loads(f.read())
+				for b in l.keys():
+					check = l[b]
+					if check.name == b:
+						return b
+
 
 		

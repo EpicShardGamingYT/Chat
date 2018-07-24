@@ -16,7 +16,7 @@ app.config.from_object('config')
 
 
 
-@app.route('/lib/send/<string:message>/<int:author>')
+@app.route('/lib/send/<string:message>/<string:token>')
 def send_message(message,author):
 	lib.database.new_message(message,author)
 	return ""
