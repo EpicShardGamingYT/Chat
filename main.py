@@ -38,8 +38,12 @@ def get_messages():
 def test_userInfo(uname):
 	pass
 
-
-
+@app.route('/')
+def index()
+	f = open("lib/gui/index.html")
+	res = f.read()
+	f.close()
+	return res
 
 
 
