@@ -14,17 +14,20 @@ app.config.from_object('config')
 
 
 
+@app.route('/lib/user/getSecret/<string:username>/<string:pwd>')
+def getSecret(username,pwd):
+	lib.database.security.get_token(username,pwd)
 
-
-@app.route('/lib/send/<string:message>/<int:author>')
-def send_message(message,author):
+@app.route('/lib/user/send/<string:message>/<path:token>')
+def send_message(message,token):
+	author = lib.database.security.getID(token)
 	lib.database.new_message(message,author)
 	return ""
 @app.route('/lib/user/create/<string:username>/<string:password>')
 def create_user(username,password):
 	lib.database.new_user(username,password,0)
 	return ""
-@app.route('/lib/info/<int:user>')
+@app.route('/lib/user/info/<int:user>')
 def user_info(user):
 	return str(lib.database.lookup_user(user))
 
