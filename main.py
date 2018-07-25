@@ -16,7 +16,7 @@ app.config.from_object('config')
 
 @app.route('/lib/user/getSecret/<string:username>/<string:pwd>')
 def getSecret(username,pwd):
-	lib.database.security.get_token(username,pwd)
+	return lib.database.security.get_token(username,pwd)
 
 @app.route('/lib/user/send/<string:message>/<path:token>')
 def send_message(message,token):
@@ -34,12 +34,13 @@ def user_info(user):
 @app.route('/lib/messages')
 def get_messages():
 	return str(lib.database.get_messages())
-@app.route("/lib/tests/lib/<string:uname>")
-def test_userInfo(uname):
-	pass
 
-
-
+@app.route('/')
+def index():
+	f = open("lib/gui/index.html")
+	res = f.read()
+	f.close()
+	return res
 
 
 
