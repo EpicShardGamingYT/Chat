@@ -12,8 +12,8 @@ A open source chat app
 ## Basic
 
 ### Setting up
-	make shure you have python 3.6 (can be any 3 stable)
-	make shure you have git and it added to path (see installer)
+	make sure you have python 3.6 (can be any 3 stable)
+	make sure you have git and it added to path (see installer)
 	run setup.py
 	errors? pip install <modulename>
 
