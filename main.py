@@ -9,6 +9,16 @@ import random
 import lib
 from OpenSSL import SSL
 context = ('Keys/ssl.crt', 'Keys/ssl.key')
+try:
+	f = open("Keys/ssl.crt")
+	f.close()
+except:
+	context = None
+with open("settings.json") as f:
+	settings = json.loads(f.read())
+	f.close()
+
+
 app = Flask(__name__)
 app.config.from_object('config')
 
@@ -77,4 +87,4 @@ def loadHtml(page):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=os.getenv('PORT'),ssl_context=context)	
+    app.run(host='0.0.0.0', port=settings["port"],ssl_context=context)	
