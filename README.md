@@ -16,9 +16,14 @@ A open source chat app
 	make shure you have git and it added to path (see installer)
 	run setup.py
 	errors? pip install <modulename>
+
 ### Connect
 	go on https://localhost:5000
 
+
+## Updates
+	It will auto update the stable branch with the run file. You would also be able to set up there
+	
 
 
 ## Advanced
@@ -27,7 +32,7 @@ A open source chat app
 	Simply drag and drop the page in the lib/GUI folder and it will be https://<URL>/<websitename>.
 	the index file will just be / in the first dir
 
-### Inerating with the API
+### Interating with the API
 
 	You can ineract with the api with requests EXAMPLE https://ghostbin.com/paste/whk4j
 	List of api urls: 
