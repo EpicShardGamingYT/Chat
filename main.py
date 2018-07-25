@@ -22,7 +22,7 @@ with open("settings.json") as f:
 app = Flask(__name__)
 app.config.from_object('config')
 
-@app.route('/logo')
+@app.route('/logo.gif')
 def get_logo():
 	return send_file("lib/logo.gif", mimetype='image/gif')
 
