@@ -16,7 +16,7 @@ app.config.from_object('config')
 
 @app.route('/lib/user/getSecret/<string:username>/<string:pwd>')
 def getSecret(username,pwd):
-	lib.database.security.get_token(username,pwd)
+	return lib.database.security.get_token(username,pwd)
 
 @app.route('/lib/user/send/<string:message>/<path:token>')
 def send_message(message,token):

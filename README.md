@@ -26,3 +26,13 @@ A open source chat app
 ### Custom GUI
 	Simply drag and drop the page in the lib/GUI folder and it will be https://<URL>/<websitename>.
 	the index file will just be / in the first dir
+
+### Inerating with the API
+
+	You can ineract with the api with requests EXAMPLE https://ghostbin.com/paste/whk4j
+	List of api urls: 
+		/lib/messages - Gets all messages in json form
+		/lib/user/info/<ID> - gets info about a member
+		/lib/user/create/<USERNAME>/<PASSWORD> - creates a user.
+		/lib/user/send/<MESSAGE>/<TOKEN> - sends a message. Use a access token for this
+		/lib/user/getSecret/<USERNAME>/<PASSWORD> - gets the users access token.
